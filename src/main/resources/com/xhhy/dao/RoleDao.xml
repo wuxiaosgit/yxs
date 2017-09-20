@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.xhhy.dao.RoleDao">
+	<resultMap type="RoleBean" id="role">
+		<id property="roleId" column="role_id" />
+		<result property="roleState" column="role_state" />
+		<result property="roleName" column="role_name" />
+		<result property="deptId" column="dept_id" />
+		<result property="roleRemark" column="role_remark" />
+		<result property="roleDescribe" column="role_describe" />
+		<association property="deptBean" javaType="DeptBean"
+			select="com.xhhy.dao.DeptDao.getDeptById" column="dept_id"></association>
+	</resultMap>
+	<select id="listRole" resultMap="role">
+		select * from role_tb
+	</select>
+
+</mapper>

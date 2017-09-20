@@ -4,9 +4,19 @@ import java.io.Serializable;
 
 public class MenuBean implements Serializable {
 	private Integer menuId;
+	private Integer menuTopId;
 	private Integer menuState;
 	private String  menuName;
 	private String  menuUrl;
+	
+	
+	
+	public Integer getMenuTopId() {
+		return menuTopId;
+	}
+	public void setMenuTopId(Integer menuTopId) {
+		this.menuTopId = menuTopId;
+	}
 	
 	public Integer getMenuId() {
 		return menuId;

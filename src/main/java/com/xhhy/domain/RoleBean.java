@@ -1,14 +1,23 @@
 package com.xhhy.domain;
 
 import java.io.Serializable;
+import java.util.List;
 
 public class RoleBean implements Serializable{
 	private Integer roleId;
 	private Integer deptId;
+	private DeptBean deptBean;
 	private String roleName;
 	private String roleDescribe;
 	private String roleRemark;
 	private String roleState;
+	
+	public DeptBean getDeptBean() {
+		return deptBean;
+	}
+	public void setDeptBean(DeptBean deptBean) {
+		this.deptBean = deptBean;
+	}
 	public Integer getRoleId() {
 		return roleId;
 	}

@@ -6,6 +6,7 @@ public class UserBean implements Serializable{
 	
 	private Integer userId;
 	private Integer roleId;
+	private RoleBean roleBean;
 	private String userName;
 	private String userLogin;
 	private String userAddress;
@@ -19,6 +20,12 @@ public class UserBean implements Serializable{
 	private String userPicture;
 	private String userRemark;
 
+	public RoleBean getRoleBean() {
+		return roleBean;
+	}
+	public void setRoleBean(RoleBean roleBean) {
+		this.roleBean = roleBean;
+	}
 	public String getUserAddress() {
 		return userAddress;
 	}

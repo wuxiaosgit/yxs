@@ -41,16 +41,20 @@
                             <td height=10></td>
 						</tr>
 					</table>
-                    <table cellspacing=0 cellpadding=0 width=150 border=0>
-                        <tr height=22>
-                            <td style="padding-left: 30px" background=./img/menu_bt.jpg>
-							   <a     class=menuparent onclick=expand(1)  href="javascript:void(0);">个人信息</a>
-							 </td>
-						</tr>
-                        <tr height=4>
-                            <td></td>
-						</tr>
-					</table>
+					<c:forEach items="${menuTops }" var="top">
+	                    <table cellspacing=0 cellpadding=0 width=150 border=0>
+	                        <tr height=22>
+	                            <td style="padding-left: 30px" background=./img/menu_bt.jpg>
+								   <a     class=menuparent onclick=expand(1)  href="javascript:void(0);">${top.topName }</a>
+								 </td>
+							</tr>
+	                        <tr height=4>
+	                            <td></td>
+							</tr>
+						</table>
+						
+					
+					</c:forEach>
                     <table id=child1 style="display: none" cellspacing=0 cellpadding=0  width=150 border=0>
                         
 						<tr height=20>

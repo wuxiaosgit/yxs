@@ -14,7 +14,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.xhhy.domain.UserBean;
 import com.xhhy.service.UserService;
-import com.xhhy.utils.MD5;
 
 @Controller
 @RequestMapping("user")
@@ -23,10 +22,13 @@ public class UserController {
 	@Autowired
 	private UserService userService;
 	
+	
 	@RequestMapping("login.do")
 	public ModelAndView login(UserBean userBean){
 		ModelAndView mav=new ModelAndView("../html/index.jsp");
 		UserBean user=userService.login(userBean);
+	
+	
 		if (user==null) {
 			mav.setViewName("../html/login.jsp");
 		}else{
