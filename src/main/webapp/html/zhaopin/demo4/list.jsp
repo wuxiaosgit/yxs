@@ -1,3 +1,4 @@
+<%@ page language="java" import="java.util.*" pageEncoding="Utf-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
     <head>
@@ -55,7 +56,7 @@
                     </tr>
 
                     <tr id="product1">
-                        <td><a href="view.html">张华</a></td>
+                        <td><a href="view.jsp">张华</a></td>
                         <td>男</td>
 						<td>北京航空航天大学</td>
                         <td>本科</td> 
@@ -65,13 +66,13 @@
 						<td>2013-09-08</td>
 						<td width="40px;" >建议录用</td>
                         <td>
-							<a href="add.html">面试结果</a>						   
-							<a href="../../pmag/demo1/add.html">入职办理</a>
+							<a href="add.jsp">面试结果</a>						   
+							<a href="../../pmag/demo1/add.jsp">入职办理</a>
 						
 						</td>                        
                     </tr> 
 					 <tr id="product1">
-                        <td><a href="view.html">王宇</a></td>
+                        <td><a href="view.jsp">王宇</a></td>
                         <td>男</td>
 						<td>清华大学</td>
                         <td>本科</td> 
@@ -81,14 +82,14 @@
 						<td>2013-09-08</td>
 						<td width="40px;" >建议录用</td>
                         <td>
-							<a href="add.html">面试结果</a>								   
-							<a href="../../pmag/demo1/add.html">入职办理</a>
+							<a href="add.jsp">面试结果</a>								   
+							<a href="../../pmag/demo1/add.jsp">入职办理</a>
 							
 						</td>                        
                     </tr> 
 					
 					<tr id="product1">
-                        <td><a href="view.html">张茜</a></td>
+                        <td><a href="view.jsp">张茜</a></td>
                         <td>女</td>
 						<td>北京矿业大学</td>
                         <td>本科</td> 
@@ -98,13 +99,13 @@
 						<td>2013-09-08</td>
 						<td width="40px;" >建议录用</td>
                         <td>
-							<a href="add.html">面试结果</a>							   
-							<a href="../../pmag/demo1/add.html">入职办理</a>
+							<a href="add.jsp">面试结果</a>							   
+							<a href="../../pmag/demo1/add.jsp">入职办理</a>
 								
 						</td>                        
                     </tr> 
 					<tr id="product1">
-                        <td><a href="view.html">李梅</a></td>
+                        <td><a href="view.jsp">李梅</a></td>
                         <td>女</td>
 						<td>北京财经大学</td>
                         <td>本科</td> 
@@ -116,7 +117,7 @@
                         <td>
 						<!--录用状态 没有  面试结果登记-->
 <!-- 							<a href="add.html">面试结果</a> -->							   
-							<a href="../../pmag/demo1/add.html">入职办理</a>
+							<a href="../../pmag/demo1/add.jsp">入职办理</a>
 								
 						</td>                        
                     </tr> 

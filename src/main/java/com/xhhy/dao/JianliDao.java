@@ -1,5 +1,7 @@
 package com.xhhy.dao;
 
+import java.util.List;
+
 import com.xhhy.domain.JianliBean;
 
 public interface JianliDao {
@@ -14,4 +16,6 @@ public interface JianliDao {
     int updateByPrimaryKeySelective(JianliBean record);
 
     int updateByPrimaryKey(JianliBean record);
+
+	List<JianliBean> selectAll();
 }

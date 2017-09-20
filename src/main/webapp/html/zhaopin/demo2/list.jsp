@@ -1,9 +1,10 @@
+<%@ page language="java" import="java.util.*" pageEncoding="Utf-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
     <head>
         <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 
-        <title>薪酬标准管理</title>
+        <title>简历管理</title>
 
         <link href="../../css/mine.css" type="text/css" rel="stylesheet" />
     </head>
@@ -13,14 +14,14 @@
         </style>
         <div class="div_head">
             <span>
-                <span style="float: left;">当前位置是：招聘管理-》面试管理</span>
+                <span style="float: left;">当前位置是：招聘管理-》简历管理</span>
                 <span style="float: right; margin-right: 8px; font-weight: bold;">
-                    
+                    <a style="text-decoration: none;" href="add.jsp">【添加】</a>
                 </span>
             </span>
         </div>
         <div></div>
-        <div class="div_search">
+         <div class="div_search">
             <span>
                 <form action="#" method="get">
 					姓名: 
@@ -29,13 +30,6 @@
 					<input type="text" size="20px" />
 					工作经验: 
 					<input type="text" size="10px" />
-					简历状态: 
-					<select>
-						<option>-请选择-</option>
-						<option>推荐面试</option>
-						<option>推荐二面</option>
-						<option>推荐三面</option>
-					</select>
 					登记日期: 
 					<input type="text" size="20px" />
                     <input value="查询" type="submit" />
@@ -43,7 +37,7 @@
                 </form>
             </span>
         </div>
-       <div style="font-size: 13px; margin: 10px 5px;">
+        <div style="font-size: 13px; margin: 10px 5px;">
             <table class="table_a" border="1" width="100%">
                 <tbody><tr style="font-weight: bold;">
                         <td width="30px;">姓名</td>
@@ -54,12 +48,12 @@
 						<td width="100px;">应聘职位</td>
                         <td width="40px;">工作经验</td> 
 						<td width="70px;">登记日期</td>
-						<td width="70px;">简历状态</td>
+						
                         <td align="center" width="100px;">操作</td>
                     </tr>
 
                     <tr id="product1">
-                        <td><a href="view.html">张华</a></td>
+                        <td><a href="view.jsp">张华</a></td>
                         <td>男</td>
 						<td>北京航空航天大学</td>
                         <td>本科</td> 
@@ -67,14 +61,23 @@
                         <td>高级工程师</td>
 						<td>5年</td>
 						<td>2013-09-08</td>
-						<td>推荐面试</td>
+						
                         <td>
-							<a href="add.html">面试结果登记</a>						   
+							<a href="add.jsp">修改</a>						   
 							<a href="#">删除</a>
+							<select>
+							<option>存档</option>
+							<option>推荐面试</option>
+							<option>推荐二面</option>
+							<option>推荐三面</option>
+							<option>建议录用</option>
+							<option>录用</option>
+							<option>删除</option>
+						</select>
 						</td>                        
                     </tr> 
 					 <tr id="product1">
-                        <td><a href="view.html">王宇</a></td>
+                        <td><a href="view.jsp">王宇</a></td>
                         <td>男</td>
 						<td>清华大学</td>
                         <td>本科</td> 
@@ -82,15 +85,24 @@
                         <td>技术培训师</td>
 						<td>2年</td>
 						<td>2013-09-08</td>
-						<td>推荐二面</td>
+						
                         <td>
-							<a href="add.html">面试结果登记</a>								   
+							<a href="add.jsp">修改</a>						   
 							<a href="#">删除</a>
+							<select>
+								<option>存档</option>
+								<option>推荐面试</option>
+								<option>推荐二面</option>
+								<option>推荐三面</option>
+								<option>建议录用</option>
+								<option>录用</option>
+								<option>删除</option>
+							</select>
 						</td>                        
                     </tr> 
 					
 					<tr id="product1">
-                        <td><a href="view.html">张茜</a></td>
+                        <td><a href="view.jsp">张茜</a></td>
                         <td>女</td>
 						<td>北京矿业大学</td>
                         <td>本科</td> 
@@ -98,14 +110,23 @@
                         <td>人事专员</td>
 						<td>5年</td>
 						<td>2013-09-08</td>
-						<td>推荐三面</td>
+						
                         <td>
-							<a href="add.html">面试结果登记</a>							   
+							<a href="add.jsp">修改</a>						   
 							<a href="#">删除</a>
+							<select>
+								<option>存档</option>
+								<option>推荐面试</option>
+								<option>推荐二面</option>
+								<option>推荐三面</option>
+								<option>建议录用</option>
+								<option>录用</option>
+								<option>删除</option>
+							</select>
 						</td>                        
                     </tr> 
 					<tr id="product1">
-                        <td><a href="view.html">李梅</a></td>
+                        <td><a href="view.jsp">李梅</a></td>
                         <td>女</td>
 						<td>北京财经大学</td>
                         <td>本科</td> 
@@ -113,10 +134,19 @@
                         <td>财务主管</td>
 						<td>5年</td>
 						<td>2013-09-08</td>
-						<td>推荐面试</td>
+						
                         <td>
-							<a href="add.html">面试结果登记</a>							   
+							<a href="add.jsp">修改</a>						   
 							<a href="#">删除</a>
+							<select>
+								<option>存档</option>
+								<option>推荐面试</option>
+								<option>推荐二面</option>
+								<option>推荐三面</option>
+								<option>建议录用</option>
+								<option>录用</option>
+								<option>删除</option>
+							</select>
 						</td>                        
                     </tr> 
                     <tr>

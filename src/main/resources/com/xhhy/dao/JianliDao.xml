@@ -40,6 +40,9 @@
     from jianli_tb
     where jianli_id = #{jianliId,jdbcType=INTEGER}
   </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+  	select * from jianli_tb
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from jianli_tb
     where jianli_id = #{jianliId,jdbcType=INTEGER}
