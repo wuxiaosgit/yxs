@@ -25,12 +25,13 @@ public class UserController {
 	
 	@RequestMapping("login.do")
 	public ModelAndView login(UserBean userBean){
-		System.out.println(userBean);
 		ModelAndView mav=new ModelAndView("../html/index.jsp");
 		UserBean user=userService.login(userBean);
-		System.out.println(user);
 		if (user==null) {
 			mav.setViewName("../html/login.jsp");
+		}else{
+			mav.addObject("user",user);
+			
 		}
 		
 		return mav;
