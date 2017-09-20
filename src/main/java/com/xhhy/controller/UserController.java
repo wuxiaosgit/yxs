@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.xhhy.domain.UserBean;
 import com.xhhy.service.UserService;
@@ -17,22 +18,15 @@ import com.xhhy.utils.MD5;
 public class UserController {
 	@Autowired
 	private UserService userService;
-	@RequestMapping("insert.do")
-	public String insertUser() throws NoSuchAlgorithmException{
-		UserBean user = new UserBean();
-		String newName = MD5.getInstance("Jack");
-		user.setUserName(newName);
-		user.setUserGender("男");
-		user.setUserAge(22);
-		user.setUserEmail("jack@163.com");
-		user.setUserAddress("Amarica");
-		userService.insertUser(user);
-		return "/index.jsp";
-	}
-	@RequestMapping("list.do")
-	public String listUser(Model model){
-		List<UserBean> users = userService.listUser();
-		model.addAttribute("users",users);
-		return "/list.jsp";
+	
+	@RequestMapping("login.do")
+	public ModelAndView login(UserBean userBean){
+		System.out.println(userBean);
+		ModelAndView mav=new ModelAndView("../html/index.jsp");
+		UserBean u=userService.login(userBean);
+		if (u==null) {
+			mav.setViewName("../html/login.jsp");
+		}
+		return mav;
 	}
 }

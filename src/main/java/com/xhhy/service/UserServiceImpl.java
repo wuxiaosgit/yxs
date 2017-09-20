@@ -25,12 +25,11 @@ public class UserServiceImpl implements UserService {
 		return userDao.listUser();
 	}
 
-	public UserDao getUserDao() {
-		return userDao;
-	}
+	
 
-	public void setUserDao(UserDao userDao) {
-		this.userDao = userDao;
+	public UserBean login(UserBean userBean) {
+		// TODO Auto-generated method stub
+		return userDao.login(userBean);
 	}
 
 }

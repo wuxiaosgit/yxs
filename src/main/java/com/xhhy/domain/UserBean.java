@@ -4,17 +4,38 @@ import java.io.Serializable;
 
 public class UserBean implements Serializable{
 	
-	private int userId;
+	private Integer userId;
+	private Integer roleId;
 	private String userName;
-	private int userAge;
-	private String userGender;
-	private String userEmail;
+	private String userLogin;
 	private String userAddress;
-	public int getUserId() {
+	private String userPassword;
+	private int userState;
+	private String userGender;
+	private String userIdcard;
+	private String userPhone;
+	private String userTelephone;
+	private String userEmail;
+	private String userPicture;
+	private String userRemark;
+
+	public String getUserAddress() {
+		return userAddress;
+	}
+	public void setUserAddress(String userAddress) {
+		this.userAddress = userAddress;
+	}
+	public Integer getUserId() {
 		return userId;
 	}
-	public void setUserId(int userId) {
+	public void setUserId(Integer userId) {
 		this.userId = userId;
+	}
+	public Integer getRoleId() {
+		return roleId;
+	}
+	public void setRoleId(Integer roleId) {
+		this.roleId = roleId;
 	}
 	public String getUserName() {
 		return userName;
@@ -22,11 +43,23 @@ public class UserBean implements Serializable{
 	public void setUserName(String userName) {
 		this.userName = userName;
 	}
-	public int getUserAge() {
-		return userAge;
+	public String getUserLogin() {
+		return userLogin;
 	}
-	public void setUserAge(int userAge) {
-		this.userAge = userAge;
+	public void setUserLogin(String userLogin) {
+		this.userLogin = userLogin;
+	}
+	public String getUserPassword() {
+		return userPassword;
+	}
+	public void setUserPassword(String userPassword) {
+		this.userPassword = userPassword;
+	}
+	public int getUserState() {
+		return userState;
+	}
+	public void setUserState(int userState) {
+		this.userState = userState;
 	}
 	public String getUserGender() {
 		return userGender;
@@ -34,24 +67,50 @@ public class UserBean implements Serializable{
 	public void setUserGender(String userGender) {
 		this.userGender = userGender;
 	}
+	public String getUserIdcard() {
+		return userIdcard;
+	}
+	public void setUserIdcard(String userIdcard) {
+		this.userIdcard = userIdcard;
+	}
+	public String getUserPhone() {
+		return userPhone;
+	}
+	public void setUserPhone(String userPhone) {
+		this.userPhone = userPhone;
+	}
+	public String getUserTelephone() {
+		return userTelephone;
+	}
+	public void setUserTelephone(String userTelephone) {
+		this.userTelephone = userTelephone;
+	}
 	public String getUserEmail() {
 		return userEmail;
 	}
 	public void setUserEmail(String userEmail) {
 		this.userEmail = userEmail;
 	}
-	public String getUserAddress() {
-		return userAddress;
+	public String getUserPicture() {
+		return userPicture;
 	}
-	public void setUserAddress(String userAddress) {
-		this.userAddress = userAddress;
+	public void setUserPicture(String userPicture) {
+		this.userPicture = userPicture;
 	}
-
+	public String getUserRemark() {
+		return userRemark;
+	}
+	public void setUserRemark(String userRemark) {
+		this.userRemark = userRemark;
+	}
+	@Override
 	public String toString() {
-		return "UserBean [userId=" + userId + ", userName=" + userName
-				+ ", userAge=" + userAge + ", userGender=" + userGender
-				+ ", userEmail=" + userEmail + ", userAddress=" + userAddress
-				+ "]";
+		return "UserBean [userId=" + userId + ", roleId=" + roleId + ", userName=" + userName + ", userLogin="
+				+ userLogin + ", userAddress=" + userAddress + ", userPassword=" + userPassword + ", userState="
+				+ userState + ", userGender=" + userGender + ", userIdcard=" + userIdcard + ", userPhone=" + userPhone
+				+ ", userTelephone=" + userTelephone + ", userEmail=" + userEmail + ", userPicture=" + userPicture
+				+ ", userRemark=" + userRemark + "]";
 	}
+	
 	
 }
