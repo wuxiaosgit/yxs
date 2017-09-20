@@ -57,10 +57,10 @@
         <table cellspacing=0 cellpadding=2 width="95%" align=center border=0>
             <tr>
                 <td align=right width=100>登陆帐号：</td>
-                <td style="color: #880000">admin</td></tr>
+                <td style="color: #880000">${user.userLogin }</td></tr>
             <tr>
                 <td align=right>真实姓名：</td>
-                <td style="color: #880000">admin</td></tr>
+                <td style="color: #880000">${user.userName }</td></tr>
             <tr>
                 <td align=right>注册时间：</td>
                 <td style="color: #880000">2007-7-25 15:02:04</td></tr>
