@@ -74,6 +74,9 @@
       <if test="yaoqiu != null" >
         yaoqiu,
       </if>
+      <if test="state != null" >
+        state,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="zhaopinId != null" >
@@ -105,6 +108,9 @@
       </if>
       <if test="yaoqiu != null" >
         #{yaoqiu,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="state != null" >
+        #{state,jdbcType=INTEGER},
       </if>
     </trim>
   </insert>

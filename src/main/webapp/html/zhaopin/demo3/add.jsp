@@ -3,8 +3,9 @@
 <html>
     <head>
         <title>面试管理</title>
-        <meta http-equiv="content-type" content="text/html;charset=utf-8">
-        <link href="../../css/mine.css" type="text/css" rel="stylesheet">
+        <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+        <link href="../../css/mine.css" type="text/css" rel="stylesheet"/>
+        <script language="javascript" type="text/javascript" src="../../My97DatePicker/WdatePicker.js"></script>
     </head>
 
     <body>
@@ -13,7 +14,7 @@
             <span>
                 <span style="float:left">当前位置是：面试管理-》面试结果登记</span>
                 <span style="float:right;margin-right: 8px;font-weight: bold">
-                    <a style="text-decoration: none" href="list.jsp">【返回】</a>
+                    <a style="text-decoration: none" href="#" onclick="javascript:history.back(-1);">【返回】</a>
                 </span>
             </span>
         </div>
@@ -199,9 +200,9 @@
                     </td>                
                 </tr>		
             </table>
-			<br>
+			<br/>
 			
-             面试结果：  <hr color="#009966" size="1px">
+             面试结果：  <hr color="#009966" size="1px" />
             
 			<table border="1" width="100%" class="table_a">
 			<tr>
@@ -223,10 +224,12 @@
 				</tr>
 				
 				 <tr>
-                    <td>一面面试人：<input type="text" value="zhangsan"> 面试时间：<input value="2015-11-01">
+                    <td>一面面试人：<input type="text" value="zhangsan"/> 面试时间：
+                    <input value="2015-11-01"/>
 					</td>
                     <td>
-                     二面面试人：<input type="text" value="zhangsan"> 面试时间：<input value="2015-11-01">
+                     二面面试人：<input type="text" value="zhangsan" /> 面试时间：
+                     <input  value="2015-11-01"/>
                     </td>
                 </tr>
 				</tr>
@@ -238,15 +241,15 @@
                 </tr>
 				</tr>
 					<tr>
-                    <td>三面面试人：<input type="text" value="zhangsan"> 面试时间：<input value="2015-11-01"></td>
+                    <td>三面面试人：<input type="text" value="zhangsan"/> 面试时间：<input value="2015-11-01"/></td>
                     <td>
                       三面面试评价：<textarea cols="70" rows="3"></textarea>
                     </td>                
                 </tr>
 				 <tr>
                     <td colspan="2" align="center">
-                        <input type="submit" value="保存">
-						<input type="button" value="返回">
+                        <input type="submit" value="保存" />
+						<input type="button" value="返回" onclick="javascript:history.back(-1);" />
                     </td>
                 </tr>  
 			</table>
