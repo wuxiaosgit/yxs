@@ -45,18 +45,23 @@ public class JianliController {
 	@RequestMapping("updateByPrimaryKeySelective")
 	public String updateByPrimaryKeySelective(JianliBean jianliBean,String method ){
 		//System.out.println(zhaopinBean.getZhaopinId());
+		System.out.println(method);
 		if(method!=null&&method.equals("del")){
 			jianliBean.setState(State.DEL);
 			jianliService.updateByPrimaryKeySelective(jianliBean);
 			return "selectAll.do";
+		}else{
+			jianliBean.setState(State.UNDEL);
+			jianliService.updateByPrimaryKeySelective(jianliBean);
+			return "selectAll.do";
 		}
-		jianliService.updateByPrimaryKeySelective(jianliBean);
-		return "selectAll.do";
+		
 	}
 	//-------------------------添加简历--------------------------
 	@RequestMapping("insertSelective")
 	public String insertSelective(JianliBean jianliBean){
 		System.out.println(jianliBean);
+		jianliBean.setState(State.SAVE);
 		jianliService.insertSelective(jianliBean);
 		return "selectAll.do";
 	}

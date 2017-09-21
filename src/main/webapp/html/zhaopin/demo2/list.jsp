@@ -54,7 +54,9 @@
                     </tr>
 					<c:forEach items="${list }" var="list">
 						<tr id="product1">
-						<td><a href="../jianli/selectByPrimaryKey.do?jianliId=${list.jianliId }&method=view">${list.xingming }</a></td>
+						<td><a href="../jianli/selectByPrimaryKey.do?jianliId=${list.jianliId }&method=view">${list.xingming }</a>
+						<a href="../jianli/insertSelective.do">tianjia</a>
+						</td>
                         <td>${list.xingbie }</td>
 						<td>${list.school }</td>
                         <td>${list.xueli }</td> 

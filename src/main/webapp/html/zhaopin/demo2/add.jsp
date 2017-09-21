@@ -3,8 +3,8 @@
 <html>
     <head>
         <title>简历管理添加</title>
-        <meta http-equiv="content-type" content="text/html;charset=utf-8">
-        <link href="../../css/mine.css" type="text/css" rel="stylesheet">
+        <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+        <link href="../../css/mine.css" type="text/css" rel="stylesheet" />
         <script language="javascript" type="text/javascript" src="../../My97DatePicker/WdatePicker.js"></script>
     </head>
 
@@ -21,7 +21,9 @@
         <div></div>
 
         <div style="font-size: 13px;margin: 10px 5px">
-            <form action="../../../jianli/insertSelective.do" method="post">
+           <!--  <form action="../../../zhaopin/insertSelective.do" method="post"> -->
+            <%-- ../jianli/selectByPrimaryKey.do?jianliId=${list.jianliId } --%>
+             <form action="../../../jianli/insertSelective.do" method="post">
             <table border="1" width="100%" class="table_a">
                 <tr>
                     <td width="120px;">应聘职位名称<span style="color:red">*</span>：</td>
@@ -166,28 +168,28 @@
 						</select>
                     </td>                
                 </tr>
-				</tr>
+			
 					<tr>
                     <td>登记时间：</td>
                     <td>
                         <input type="text" name="time" onclick="WdatePicker({el:this,dateFmt:'yyyy-MM-dd HH:mm:ss'})"/>
                     </td>                
                 </tr>
-				</tr>
+				
 					<tr>
                     <td>个人履历：</td>
                     <td>
-                       <textarea cols="70" rows="13" name="jianli">asdfasdfsasdf</textarea>
+                       <textarea cols="70" rows="13" name="jianli"></textarea>
                     </td>                
                 </tr>
-				</tr>
+				
 					<tr>
                     <td>简历附件：</td>
                     <td>
                         <input type="file" name="fujian" />
                     </td>                
                 </tr>
-				</tr>
+			
 					<tr>
                     <td>是否有人推荐面试：</td>
                     <td>
@@ -196,11 +198,11 @@
 							<option value="是">是</option>
 							<option value="否">否</option>
 						</select>
-						推荐人：<input type="text" name="tuijianren" value="">
+						推荐人：<input type="text" name="tuijianren" value="" />
 						推荐时间：<input type="text" name="tuijiantime" onclick="WdatePicker({el:this,dateFmt:'yyyy-MM-dd HH:mm:ss'})"/>
                     </td>                
                 </tr>
-				</tr>
+			
 					<tr>
                     <td>推荐面试意见：</td>
                     <td>
@@ -209,8 +211,8 @@
                 </tr>
                 <tr>
                     <td colspan="2" align="center">
-                        <input type="submit" value="保存">
-						<input type="button" value="返回" onclick="javascript:history.back(-1);">
+                        <input type="submit" value="保存" />
+						<input type="button" value="返回" onclick="javascript:history.back(-1);" />
                     </td>
                 </tr>  
             </table>

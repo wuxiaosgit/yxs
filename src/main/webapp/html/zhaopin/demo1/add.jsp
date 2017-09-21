@@ -3,8 +3,8 @@
 <html>
     <head>
         <title>职位发布登记</title>
-        <meta http-equiv="content-type" content="text/html;charset=utf-8">
-        <link href="../../css/mine.css" type="text/css" rel="stylesheet">
+        <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+        <link href="../../css/mine.css" type="text/css" rel="stylesheet" />
         <script language="javascript" type="text/javascript" src="../../My97DatePicker/WdatePicker.js"></script>
     </head>
 
