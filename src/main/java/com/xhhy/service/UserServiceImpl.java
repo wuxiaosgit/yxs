@@ -21,16 +21,26 @@ public class UserServiceImpl implements UserService {
 		System.out.println(str.length());*/
 	}
 
-	public List<UserBean> listUser() {
-		return userDao.listUser();
+
+
+	
+
+	public UserBean login(UserBean userBean) {
+		// TODO Auto-generated method stub
+		return userDao.login(userBean);
 	}
 
-	public UserDao getUserDao() {
-		return userDao;
-	}
 
-	public void setUserDao(UserDao userDao) {
-		this.userDao = userDao;
+
+
+
+	public List<UserBean> listUser(UserBean userBean) {
+		// TODO Auto-generated method stub
+		if (userBean.getUserName()!=null&&!"".equals(userBean.getUserName())) {
+			
+			userBean.setUserName("%"+userBean.getUserName()+"%");
+		}
+		return userDao.listUser(userBean);
 	}
 
 }
