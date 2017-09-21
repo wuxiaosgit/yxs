@@ -22,7 +22,16 @@ import com.xhhy.utils.MD5;
 public class UserController {
 	@Autowired
 	private UserService userService;
-	
+	@RequestMapping("selectUser.do")
+	public ModelAndView selectUser(UserBean userBean){
+		ModelAndView mav=new ModelAndView("../html/resource/demo2/list.jsp");
+		System.out.println(userBean);
+		List<UserBean> userBeans=userService.listUser(userBean);
+		for (UserBean userBean2 : userBeans) {
+			System.out.println(userBean2);
+		}
+		return mav;
+	}
 	@RequestMapping("login.do")
 	public ModelAndView login(UserBean userBean){
 		ModelAndView mav=new ModelAndView("../html/index.jsp");

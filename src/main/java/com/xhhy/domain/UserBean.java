@@ -6,6 +6,7 @@ public class UserBean implements Serializable{
 	
 	private Integer userId;
 	private Integer roleId;
+	private Integer deptId;
 	private String userName;
 	private String userLogin;
 	private String userAddress;
@@ -19,6 +20,12 @@ public class UserBean implements Serializable{
 	private String userPicture;
 	private String userRemark;
 
+	public Integer getDeptId() {
+		return deptId;
+	}
+	public void setDeptId(Integer deptId) {
+		this.deptId = deptId;
+	}
 	public String getUserAddress() {
 		return userAddress;
 	}
