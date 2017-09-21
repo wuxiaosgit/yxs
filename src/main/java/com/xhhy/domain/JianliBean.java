@@ -53,6 +53,8 @@ public class JianliBean {
     private byte[] fujian;
 
     private String yijian;
+    
+    private int state;
 
     public Integer getJianliId() {
         return jianliId;
@@ -254,6 +256,14 @@ public class JianliBean {
 		this.yijian = yijian;
 	}
 
+	public int getState() {
+		return state;
+	}
+
+	public void setState(int state) {
+		this.state = state;
+	}
+
 	@Override
 	public String toString() {
 		return "JianliBean [jianliId=" + jianliId + ", jobId=" + jobId + ", xingming=" + xingming + ", xingbie="
@@ -262,8 +272,10 @@ public class JianliBean {
 				+ ", xueli=" + xueli + ", zhuanye=" + zhuanye + ", jianyan=" + jianyan + ", xizi=" + xizi
 				+ ", yinjiesheng=" + yinjiesheng + ", zizhi=" + zizhi + ", time=" + time + ", tuijian=" + tuijian
 				+ ", tuijianren=" + tuijianren + ", tuijiantime=" + tuijiantime + ", jianli=" + jianli + ", fujian="
-				+ Arrays.toString(fujian) + ", yijian=" + yijian + "]";
+				+ Arrays.toString(fujian) + ", yijian=" + yijian + ", state=" + state + "]";
 	}
+
+	
 	
 	
 }

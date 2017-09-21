@@ -64,14 +64,14 @@
 					<c:forEach items="${zhaopinList}" var="list" >
 						<tr id="product1">
 						<td>BDQN-BM03</td>
-                        <td><a href="../../../zhaopin/view.do">技术培训师</a></td>
+                        <td><a href="../zhaopin/selectByPrimaryKey.do?zhaopinId=${list.zhaopinId}&method=view">技术培训师</a></td>
 						<td>技术</td>
                         <td>产品设计中心</td> 
 						<td>${list.zhaopinNum }</td> 						
                         <td>${list.startTime}</td>
 						<td>${list.endTime }</td>
-                        <td><a href="../../../zhaopin/up.do?zhaopinId=${list.zhaopinId}">变更</a> &nbsp;&nbsp;
-                        <a href="../../../zhaopin/up.do?zhaopinId=${list.zhaopinId}">删除</a> </td> 
+                        <td><a href="../zhaopin/selectByPrimaryKey.do?zhaopinId=${list.zhaopinId}&method=change">变更</a> &nbsp;&nbsp;
+                        <a href="../zhaopin/updateByPrimaryKeySelective.do?zhaopinId=${list.zhaopinId}&method=del">删除</a> </td> 
 						</tr>
 					</c:forEach>
                     <tr id="product1">
@@ -86,7 +86,7 @@
                     </tr> 
 					 <tr id="product1">
                         <td>BDQN-BM03</td>
-                        <td><a href="view.jsp">技术培训师</a></td>
+                        <td><a href="../html/zhaopin/demo1/view.jsp">技术培训师</a></td>
 						<td>技术</td>
                         <td>产品设计中心</td> 
 						<td>5</td> 						

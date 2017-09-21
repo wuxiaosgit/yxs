@@ -2,7 +2,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
     <head>
-        <title>薪酬标准管理</title>
+        <title>简历管理</title>
         <meta http-equiv="content-type" content="text/html;charset=utf-8">
         <link href="../../css/mine.css" type="text/css" rel="stylesheet">
     </head>
@@ -13,7 +13,7 @@
             <span>
                 <span style="float:left">当前位置是：简历管理-》查看简历信息</span>
                 <span style="float:right;margin-right: 8px;font-weight: bold">
-                    <a style="text-decoration: none" href="list.jsp">【返回】</a>
+                    <a style="text-decoration: none" href="#" onclick="javascript:history.back(-1);">【返回】</a>
                 </span>
             </span>
         </div>
@@ -41,7 +41,7 @@
                 <tr>
                     <td>姓名：</td>
                     <td>
-						<input type="text" readonly name="f_goods_image" value="张华" />
+						<input type="text" readonly name="xingming" value="${jianliBean.xingming }" />
 					</td>
                 </tr>
                 <tr>
@@ -69,46 +69,46 @@
 				<tr>
                     <td>EMAIL：</td>
                     <td>
-                        <input type="text" name="f_goods_image" value="zhanghua@126.com"  />
+                        <input type="text" name="f_goods_image" value="${jianliBean.email }"  />
                     </td>                
                 </tr>
 
 				<tr>
                     <td>联系电话：</td>
                     <td>
-                        <input type="text" name="f_goods_image" value="13988889999" />
+                        <input type="text" name="f_goods_image" value="${jianliBean.tel }" />
                     </td>                
                 </tr>
 
 				<tr>
                     <td>户口所在地：</td>
                     <td>
-                        <input type="text" name="f_goods_image" value="北京" />
+                        <input type="text" name="f_goods_image" value="${jianliBean.address }" />
                     </td>                
                 </tr>
 
 				<tr>
                     <td>住址：</td>
                     <td>
-                        <input type="text" name="f_goods_image" value="北京市朝阳区北苑路103号" />
+                        <input type="text" name="f_goods_image" value="${jianliBean.live }" />
                     </td>                
                 </tr>
 				<tr>
                     <td>政治面貌：</td>
                     <td>
-                        <input type="text" name="f_goods_image" value="党员"  />
+                        <input type="text" name="f_goods_image" value="${jianliBean.mianmao }"  />
                     </td>                
                 </tr>
 				<tr>
                     <td>身份证号：</td>
                     <td>
-                        <input type="text" name="f_goods_image" value="422665198312091067" />
+                        <input type="text" name="f_goods_image" value="${jianliBean.idcard }" />
                     </td>                
                 </tr>
 				<tr>
                     <td>毕业院校：</td>
                     <td>
-                        <input type="text" name="f_goods_image" value="北京航空航天大学" />
+                        <input type="text" name="f_goods_image" value="${jianliBean.school }" />
                     </td>                
                 </tr>	
 
@@ -125,19 +125,19 @@
 				<tr>
                     <td>专业：</td>
                     <td>
-                        <input type="text" name="f_goods_image" value="计算机科学与应用" />
+                        <input type="text" name="f_goods_image" value="${jianliBean.zhuanye }" />
                     </td>                
                 </tr>
 					<tr>
                     <td>工作经验：</td>
                     <td>
-                        <input type="text" name="f_goods_image" value="5年" />
+                        <input type="text" name="f_goods_image" value="${jianliBean.jianyan }" />
                     </td>                
                 </tr>
 					<tr>
                     <td>薪资要求：</td>
                     <td>
-                        <input type="text" name="f_goods_image" value="20,000" />（月薪）
+                        <input type="text" name="f_goods_image" value="${jianliBean.xizi }" />（月薪）
                     </td>                
                 </tr>
 					<tr>
@@ -160,18 +160,18 @@
 						</select>
                     </td>                
                 </tr>
-				</tr>
+			
 					<tr>
                     <td>登记时间：</td>
                     <td>
-                        <input type="text" name="f_goods_image" value="2013-11-21" />
+                        <input type="text" name="f_goods_image" value="${jianliBean.time }" />
                     </td>                
                 </tr>
-				</tr>
+				
 					<tr>
                     <td>个人履历：</td>
                     <td>
-                       <textarea cols="70" rows="13">2006-2008年 就职于***公司，职位：高级软件开发工程师</textarea>
+                       <textarea cols="70" rows="13">${jianliBean.jianli }</textarea>
                     </td>                
                 </tr>
 				</tr>
@@ -190,20 +190,20 @@
 							<option>是</option>
 							<option>否</option>
 						</select>
-						推荐人：<input type="text" value="徐徐">
-						推荐时间：<input type="text" value="2013-09-08">
+						推荐人：<input type="text" value="${jianliBean.tuijianren }"/>
+						推荐时间：<input type="text" value="${jianliBean.tuijiantime }"/>
                     </td>                
                 </tr>
 				</tr>
 					<tr>
                     <td>推荐面试意见：</td>
                     <td>
-                       <textarea cols="70" rows="4">  </textarea>
+                       <textarea cols="70" rows="4">${jianliBean.yijian }  </textarea>
                     </td>                
                 </tr>
                 <tr>
                     <td colspan="2" align="center">
-						<input type="button" value="返回">
+						<input type="button" value="返回"  onclick="javascript:history.back(-1);"/>
                     </td>
                 </tr>  
             </table>

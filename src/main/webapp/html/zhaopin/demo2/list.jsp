@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="Utf-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
     <head>
@@ -6,7 +7,7 @@
 
         <title>简历管理</title>
 
-        <link href="../../css/mine.css" type="text/css" rel="stylesheet" />
+        <link href="../html/css/mine.css" type="text/css" rel="stylesheet" />
     </head>
     <body>
         <style>
@@ -16,7 +17,7 @@
             <span>
                 <span style="float: left;">当前位置是：招聘管理-》简历管理</span>
                 <span style="float: right; margin-right: 8px; font-weight: bold;">
-                    <a style="text-decoration: none;" href="add.jsp">【添加】</a>
+                    <a style="text-decoration: none;" href="../html/zhaopin/demo2/add.jsp">【添加】</a>
                 </span>
             </span>
         </div>
@@ -51,7 +52,32 @@
 						
                         <td align="center" width="100px;">操作</td>
                     </tr>
-
+					<c:forEach items="${list }" var="list">
+						<tr id="product1">
+						<td><a href="../jianli/selectByPrimaryKey.do?jianliId=${list.jianliId }&method=view">${list.xingming }</a></td>
+                        <td>${list.xingbie }</td>
+						<td>${list.school }</td>
+                        <td>${list.xueli }</td> 
+						<td>${list.zhuanye }</td> 						
+                        <td>高级工程师</td>
+						<td>${list.jianyan }</td>
+						<td>${list.time }</td>
+						
+                        <td>
+							<a href="../jianli/selectByPrimaryKey.do?jianliId=${list.jianliId}&method=change">修改</a>						   
+							<a href="../jianli/updateByPrimaryKeySelective.do?jianliId=${list.jianliId}&method=del">删除</a>
+							<select name="state">
+							<option value="存档">存档</option>
+							<option value="推荐面试">推荐面试</option>
+							<option value="推荐二面">推荐二面</option>
+							<option value="推荐三面">推荐三面</option>
+							<option value="建议录用">建议录用</option>
+							<option value="录用">录用</option>
+							<option value="删除">删除</option>
+						</select>
+						</td>         
+						</tr>
+					</c:forEach>
                     <tr id="product1">
                         <td><a href="view.jsp">张华</a></td>
                         <td>男</td>

@@ -27,12 +27,13 @@
     <result column="jianli" property="jianli" jdbcType="LONGVARCHAR" />
     <result column="fujian" property="fujian" jdbcType="LONGVARBINARY" />
     <result column="yijian" property="yijian" jdbcType="LONGVARCHAR" />
+    <result column="state" property="state" jdbcType="INTEGER"/>
   </resultMap>
   <sql id="Base_Column_List" >
     jianli_id, job_id, xingming, xingbie, zhaopin_type, email, tel, address, live, mianmao, 
     IDCard, school, xueli, zhuanye, jianyan, xizi, yinjiesheng, zizhi, time, tuijian, 
     tuijianren, tuijianTime,
-    jianli, fujian, yijian
+    jianli, fujian, yijian,state
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
@@ -41,7 +42,7 @@
     where jianli_id = #{jianliId,jdbcType=INTEGER}
   </select>
   <select id="selectAll" resultMap="BaseResultMap">
-  	select * from jianli_tb
+  	select * from jianli_tb where state not in (0)
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from jianli_tb
@@ -56,7 +57,7 @@
       xizi, yinjiesheng, zizhi, 
       time, tuijian, tuijianren, 
       tuijianTime, jianli, fujian, 
-      yijian)
+      yijian,state)
     values (#{jianliId,jdbcType=INTEGER}, #{jobId,jdbcType=VARCHAR}, #{xingming,jdbcType=VARCHAR}, 
       #{xingbie,jdbcType=VARCHAR}, #{zhaopinType,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, 
       #{tel,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, #{live,jdbcType=VARCHAR}, 
@@ -65,7 +66,7 @@
       #{xizi,jdbcType=DOUBLE}, #{yinjiesheng,jdbcType=VARCHAR}, #{zizhi,jdbcType=VARCHAR}, 
       #{time,jdbcType=TIMESTAMP}, #{tuijian,jdbcType=VARCHAR}, #{tuijianren,jdbcType=VARCHAR}, 
       #{tuijiantime,jdbcType=TIMESTAMP}, #{jianli,jdbcType=LONGVARCHAR}, #{fujian,jdbcType=LONGVARBINARY}, 
-      #{yijian,jdbcType=LONGVARCHAR})
+      #{yijian,jdbcType=LONGVARCHAR}, #{state,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="com.xhhy.domain.JianliBean" >
     insert into jianli_tb
@@ -145,6 +146,9 @@
       <if test="yijian != null" >
         yijian,
       </if>
+      <if test="state != null" >
+        state,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="jianliId != null" >
@@ -221,6 +225,9 @@
       </if>
       <if test="yijian != null" >
         #{yijian,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="yijian != null" >
+        #{state,jdbcType=INTEGER},
       </if>
     </trim>
   </insert>
@@ -299,6 +306,9 @@
       <if test="yijian != null" >
         yijian = #{yijian,jdbcType=LONGVARCHAR},
       </if>
+      <if test="state != null" >
+        state = #{state,jdbcType=INTEGER},
+      </if>
     </set>
     where jianli_id = #{jianliId,jdbcType=INTEGER}
   </update>
@@ -327,7 +337,8 @@
       tuijianTime = #{tuijiantime,jdbcType=TIMESTAMP},
       jianli = #{jianli,jdbcType=LONGVARCHAR},
       fujian = #{fujian,jdbcType=LONGVARBINARY},
-      yijian = #{yijian,jdbcType=LONGVARCHAR}
+      yijian = #{yijian,jdbcType=LONGVARCHAR},
+      state= #{state,jdbcType=INTEGER}
     where jianli_id = #{jianliId,jdbcType=INTEGER}
   </update>
   
