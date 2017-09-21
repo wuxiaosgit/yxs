@@ -1,5 +1,6 @@
 package com.xhhy.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +15,26 @@ public class MenuServiceImpl implements MenuService {
 	
 	public List<MenuBean> getMenu(Integer roleId) {
 		// TODO Auto-generated method stub
-		return menuDao.getMenu(roleId);
+		List<MenuBean> LIST=new ArrayList<MenuBean>();
+		List<MenuBean> list=menuDao.getMenu(roleId);
+		for (MenuBean menuBean : list) {
+			if (menuBean.getTopId()==0) {
+				LIST.add(menuBean);
+			}
+		}
+		for (MenuBean menuBean : LIST) {
+			for (MenuBean m : list) {
+				if (m.getTopId()==menuBean.getMenuId()) {
+					menuBean.getMenuList().add(m);
+				}
+			}
+		}
+		return LIST;
+	}
+
+	public List<MenuBean> selectMenu(MenuBean menuBean) {
+		// TODO Auto-generated method stub
+		return menuDao.selectMenu(menuBean);
 	}
 
 }

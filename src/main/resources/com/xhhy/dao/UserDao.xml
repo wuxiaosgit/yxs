@@ -11,8 +11,8 @@
 	</sql>
 	<resultMap type="UserBean" id="user">
 		<id property="userId" column="user_id" />
-		<result property="userName" column="user_name" />
 		<result property="userLogin" column="user_login" />
+		<result property="roleId" column="role_id" />
 		<result property="userPassword" column="user_password" />
 		<result property="userState" column="user_state" />
 		<result property="userGender" column="user_gender" />

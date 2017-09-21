@@ -1,21 +1,29 @@
 package com.xhhy.domain;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 public class MenuBean implements Serializable {
 	private Integer menuId;
-	private Integer menuTopId;
+	private Integer topId;
 	private Integer menuState;
 	private String  menuName;
 	private String  menuUrl;
+	private List<MenuBean> menuList=new ArrayList<MenuBean>();
 	
 	
-	
-	public Integer getMenuTopId() {
-		return menuTopId;
+	public Integer getTopId() {
+		return topId;
 	}
-	public void setMenuTopId(Integer menuTopId) {
-		this.menuTopId = menuTopId;
+	public void setTopId(Integer topId) {
+		this.topId = topId;
+	}
+	public List<MenuBean> getMenuList() {
+		return menuList;
+	}
+	public void setMenuList(List<MenuBean> menuList) {
+		this.menuList = menuList;
 	}
 	
 	public Integer getMenuId() {
@@ -44,8 +52,9 @@ public class MenuBean implements Serializable {
 	}
 	@Override
 	public String toString() {
-		return "MenuBean [menuId=" + menuId + ", menuState=" + menuState + ", menuName=" + menuName + ", menuUrl="
-				+ menuUrl + "]";
+		return "MenuBean [menuId=" + menuId + ", topId=" + topId + ", menuState=" + menuState + ", menuName=" + menuName
+				+ ", menuUrl=" + menuUrl + "]";
 	}
+	
 	
 }

@@ -14,19 +14,23 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.sun.jndi.url.dns.dnsURLContext;
 import com.xhhy.domain.DeptBean;
+import com.xhhy.domain.MenuBean;
 import com.xhhy.domain.UserBean;
 import com.xhhy.service.DeptService;
+import com.xhhy.service.MenuService;
 import com.xhhy.service.UserService;
 
 @Controller
 @RequestMapping("user")
-@SessionAttributes("user")
+@SessionAttributes(value={"user","menus"}, types={UserBean.class,MenuBean.class})
 public class UserController {
 	@Autowired
 	private UserService userService;
 	@Autowired
 	private DeptService deptService;
-
+	@Autowired
+	private MenuService menuService;
+	
 	@RequestMapping("selectUser.do")
 	public ModelAndView selectUser(UserBean userBean){
 		ModelAndView mav=new ModelAndView("../html/resource/demo2/list.jsp");
@@ -54,6 +58,17 @@ public class UserController {
 			mav.setViewName("../html/login.jsp");
 		}else{
 			mav.addObject("user",user);
+			System.out.println(user);
+			List<MenuBean> menus=menuService.getMenu(user.getRoleId());
+			/*for (MenuBean menuBean : menus) {
+				System.out.println();
+				System.out.println(menuBean);
+				for (MenuBean m : menuBean.getMenuList()) {
+					System.out.println(m);
+				}
+				System.out.println();
+			}*/
+			mav.addObject("menus",menus);
 			
 		}
 		

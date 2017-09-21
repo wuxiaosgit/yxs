@@ -1,11 +1,23 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<%@ page language="java" import="java.util.*" pageEncoding="Utf-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%
+	String path = request.getContextPath();
+	String basePath = request.getScheme() + "://"
+			+ request.getServerName() + ":" + request.getServerPort()
+			+ path + "/html/";
+%>
+
+<!DOCTYPE html>
 <html>
-    <head>
-        <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+
+<head>
+	<base href="<%=basePath%>">
+	<meta charset="utf-8" />
+	 <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 
         <title>薪酬标准管理</title>
 
-        <link href="../../css/mine.css" type="text/css" rel="stylesheet" />
+        <link href="css/mine.css" type="text/css" rel="stylesheet" />
     </head>
     <body>
         <style>
@@ -23,14 +35,14 @@
         <div></div>
         <div class="div_search">
             <span>
-                <form action="#" method="get">
-                    菜单名称: 
-					<input type="text"  />
+                <form action="../menu/selectMenu.do" method="post">
+                  	  菜单名称: 
+					<input type="text" name="menuName" value="${menuName }" />
 					 状态: 
-					<select>
-						<option></option>
-						<option>启用</option>
-						<option>禁用</option>
+					<select name="menuState">
+						<option value=-1>--请选择--</option>
+						<option value=1>启用</option>
+						<option value=0>禁用</option>
 					
 					</select>
                     <input value="查询" type="submit" />
@@ -49,31 +61,21 @@
                         
                         <td align="center" width="100px;">操作</td>
                     </tr>
-
+				<c:forEach items="${menuBeans }" var="item">
                     <tr id="product1">
-                        <td>1</td>
+                        <td>${item.menuId }</td>
                         <td><input type="checkbox" /></td>
-						<td>个人信息</td>
-                        <td><a href="view.html">resourc/persion.do</a></td> 
-						<td>启用</td> 						
+						<td>${item.menuName }</td>
+                        <td><a href="view.html">${item.menuUrl }</a></td> 
+						<td>${item.menuState }</td> 						
                         <td>
 							<a href="add.html">修改</a>						   
 							<a href="#">删除</a>
 						</td>                        
-                    </tr> 
-					  <tr id="product1">
-                        <td>2</td>
-                        <td><input type="checkbox" /></td>
-						<td>培训惯例</td>
-                        <td><a href="view.html">px/px.do</a></td> 
-						<td>启用</td> 						
-                        <td>
-							<a href="add.html">修改</a>						   
-							<a href="#">删除</a>
-						</td>                        
-                    </tr> 
-					
-					
+                    </tr>
+				</c:forEach>
+                    
+                
                     <tr>
                         <td colspan="20" style="text-align: center;">						
 						<a style="text-decoration: none;" href="#">
