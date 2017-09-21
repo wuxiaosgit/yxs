@@ -29,18 +29,16 @@
     	function selectrole(obj){
     		
     		$.post("../role/ajaxRole.do",{deptId:obj},function(result){
-    			alert(result);
-    			/* var $json=$.parseJSON(result);
-    			 var docselect = document.getElementById("docid"); 
-    			docselect.innerHTML="";
-    			docselect.add(new Option("--请选择--",-1),null);
-    			$($json).each(function(i,item){
-    				 var a=parseInt(item.countmax)-parseInt(item.count); 
-    				if(a>0){
-    					 docselect.add(new Option(item.dname+"可以出诊"+a+"次",item.did),null);
-    				}
-    				 
-    			}); */
+    			 var role = document.getElementById("roleId"); 
+    			 role.innerHTML="";
+    			 role.add(new Option("--请选择--",-1),null);
+    			
+    			for ( var sss in result) {
+					
+    			 role.add(new Option(result[sss].roleName,result[sss].roleId),null);
+				}
+    			
+    			
     		
     		});
     		
@@ -68,7 +66,7 @@
                   	   姓名：
 					<input type="text"  name="userName" value="${userName }" />
 					 所属部门: 
-					<select name="deptId" onclick="selectrole(this.value);">
+					<select name="deptId" onchange="selectrole(this.value);">
 				
 					<option value="-1">--请选择--</option>
 					<c:forEach items="${deptBeans }" var="item">
@@ -79,7 +77,7 @@
 					</select>	
 					 角色: 
 					<select name="roleId" id="roleId">
-					<option value="1">1</option>
+						<option value="-1">--请选择--</option>
 				
 					</select>
                     <input value="查询" type="submit" />
@@ -105,7 +103,7 @@
                         <td><input type="checkbox" /></td>
 						<td>${item.userLogin }</td>
                         <td><a href="view.html">${item.userName }</a></td> 
-						<td>人力资源负责人</td> 	
+						<td>${item.userName }</td> 	
 						<td>人力资源</td> 						                        
                         <td>
 							<a href="add.html">修改</a>						   

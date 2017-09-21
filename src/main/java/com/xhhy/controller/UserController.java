@@ -37,7 +37,9 @@ public class UserController {
 		if (userBean.getDeptId()!=null&&userBean.getDeptId()==-1) {
 			userBean.setDeptId(null);
 		}
-		userBean.setRoleId(4);
+		if (userBean.getRoleId()!=null&&userBean.getRoleId()==-1) {
+			userBean.setRoleId(null);
+		}
 		List<UserBean> userBeans=userService.listUser(userBean);
 		for (UserBean userBean2 : userBeans) {
 			System.out.println(userBean2);
@@ -60,14 +62,14 @@ public class UserController {
 			mav.addObject("user",user);
 			System.out.println(user);
 			List<MenuBean> menus=menuService.getMenu(user.getRoleId());
-			/*for (MenuBean menuBean : menus) {
+			for (MenuBean menuBean : menus) {
 				System.out.println();
 				System.out.println(menuBean);
 				for (MenuBean m : menuBean.getMenuList()) {
 					System.out.println(m);
 				}
 				System.out.println();
-			}*/
+			}
 			mav.addObject("menus",menus);
 			
 		}
