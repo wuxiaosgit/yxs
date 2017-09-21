@@ -123,11 +123,11 @@ public class UserBean implements Serializable{
 	}
 	@Override
 	public String toString() {
-		return "UserBean [userId=" + userId + ", roleId=" + roleId + ", userName=" + userName + ", userLogin="
-				+ userLogin + ", userAddress=" + userAddress + ", userPassword=" + userPassword + ", userState="
-				+ userState + ", userGender=" + userGender + ", userIdcard=" + userIdcard + ", userPhone=" + userPhone
-				+ ", userTelephone=" + userTelephone + ", userEmail=" + userEmail + ", userPicture=" + userPicture
-				+ ", userRemark=" + userRemark + "]";
+		return "UserBean [userId=" + userId + ", roleId=" + roleId + ", roleBean=" + roleBean + ", deptId=" + deptId
+				+ ", userName=" + userName + ", userLogin=" + userLogin + ", userAddress=" + userAddress
+				+ ", userPassword=" + userPassword + ", userState=" + userState + ", userGender=" + userGender
+				+ ", userIdcard=" + userIdcard + ", userPhone=" + userPhone + ", userTelephone=" + userTelephone
+				+ ", userEmail=" + userEmail + ", userPicture=" + userPicture + ", userRemark=" + userRemark + "]";
 	}
 	
 	

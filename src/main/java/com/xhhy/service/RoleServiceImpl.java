@@ -12,9 +12,9 @@ public class RoleServiceImpl implements RoleService {
 
 	@Autowired
 	private RoleDao roleDao;
-	public List<RoleBean> listRole() {
+	public List<RoleBean> listRole(RoleBean roleBean) {
 		// TODO Auto-generated method stub
-		return roleDao.listRole();
+		return roleDao.listRole(roleBean);
 	}
 
 	public RoleBean getRoleById(Integer roleId) {

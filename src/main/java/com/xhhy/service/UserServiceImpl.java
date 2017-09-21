@@ -36,7 +36,11 @@ public class UserServiceImpl implements UserService {
 
 	public List<UserBean> listUser(UserBean userBean) {
 		// TODO Auto-generated method stub
-		return null;
+		if (userBean.getUserName()!=null&&!"".equals(userBean.getUserName())) {
+			
+			userBean.setUserName("%"+userBean.getUserName()+"%");
+		}
+		return userDao.listUser(userBean);
 	}
 
 }

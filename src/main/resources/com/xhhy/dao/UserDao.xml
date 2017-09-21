@@ -27,8 +27,23 @@
 	<insert id="insertUser" parameterType="UserBean">
 		
 	</insert>
-	<select id="listUser" resultMap="user">
-		<include refid="my_sql" />
+	<select id="listUser" parameterType="UserBean" resultMap="user">
+		select
+		u.* from
+		user_tb u,role_tb r
+		<where>
+		u.role_id=r.role_id 
+			<if test="userName != null and userName !=''">
+			and u.user_name like #{userName}
+			</if>
+			<if test="roleId != null">
+			and  u.role_id = #{roleId}
+			</if>
+			<if test="deptId != null">
+			and  r.dept_id = #{deptId} 
+			</if>
+		</where>
+		
 	</select>
 	<select id="login" parameterType="UserBean"   resultMap="user">
 		<include refid="my_sql" />

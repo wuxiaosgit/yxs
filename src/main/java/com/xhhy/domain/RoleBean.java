@@ -8,10 +8,17 @@ public class RoleBean implements Serializable{
 	private Integer deptId;
 	private DeptBean deptBean;
 	private String roleName;
+	private String roleNumber;
 	private String roleDescribe;
 	private String roleRemark;
-	private String roleState;
+	private Integer roleState;
 	
+	public String getRoleNumber() {
+		return roleNumber;
+	}
+	public void setRoleNumber(String roleNumber) {
+		this.roleNumber = roleNumber;
+	}
 	public DeptBean getDeptBean() {
 		return deptBean;
 	}
@@ -48,10 +55,10 @@ public class RoleBean implements Serializable{
 	public void setRoleRemark(String roleRemark) {
 		this.roleRemark = roleRemark;
 	}
-	public String getRoleState() {
+	public Integer getRoleState() {
 		return roleState;
 	}
-	public void setRoleState(String roleState) {
+	public void setRoleState(Integer roleState) {
 		this.roleState = roleState;
 	}
 	@Override

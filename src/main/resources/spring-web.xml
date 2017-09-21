@@ -13,4 +13,5 @@
 	<!-- 配置包扫描,组件扫描 -->
 	<context:component-scan base-package="com.xhhy.controller">
 	</context:component-scan>
+	
 </beans>
