@@ -1,7 +1,19 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<%@ page language="java" import="java.util.*" pageEncoding="Utf-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%
+	String path = request.getContextPath();
+	String basePath = request.getScheme() + "://"
+			+ request.getServerName() + ":" + request.getServerPort()
+			+ path + "/html/";
+%>
+
+<!DOCTYPE html>
 <html>
-    <head>
-        <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+
+<head>
+	<%-- <base href="<%=basePath%>"> --%>
+	<meta charset="utf-8" />
+	 <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 
         <title>用户管理</title>
 
@@ -20,20 +32,28 @@
                 </span>
             </span>
         </div>
+        
         <div></div>
         <div class="div_search">
-            <span>
-                <form action="#" method="get">
-                     姓名：
-					<input type="text"  />
-					 角色: 
-					<input type="text"  />
+           
+                <form action="../../../user/selectUser.do" method="post">
+                  	   姓名：
+					<input type="text"  name="userName"/>
 					 所属部门: 
-					<input type="text"  />
+					<select name="deptId">
+				
+					<option value="1">1</option>
+				
+					</select>	
+					 角色: 
+					<select name="roleId">
+					<option value="1">1</option>
+				
+					</select>
                     <input value="查询" type="submit" />
 					
                 </form>
-            </span>
+           
         </div>
         <div style="font-size: 13px; margin: 10px 5px;">
             <table class="table_a" border="1" width="100%">

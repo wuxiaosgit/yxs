@@ -1,7 +1,19 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<%@ page language="java" import="java.util.*" pageEncoding="Utf-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%
+	String path = request.getContextPath();
+	String basePath = request.getScheme() + "://"
+			+ request.getServerName() + ":" + request.getServerPort()
+			+ path + "/";
+%>
+
+<!DOCTYPE html>
 <html>
-    <head>
-        <title>用户管理</title>
+
+<head>
+	<base href="<%=basePath%>">
+	<meta charset="utf-8" />
+	<title>用户管理</title>
         <meta http-equiv="content-type" content="text/html;charset=utf-8">
         <link href="../../css/mine.css" type="text/css" rel="stylesheet">
     </head>
