@@ -2,22 +2,18 @@ package com.xhhy.domain;
 
 public class ZhaopinBean {
 	private int zhaopinId;
-	private int dept_id;
+	private int deptId;
 	private String zhaopinType;
 	private int zhaopinNum;
-	private String job_id;
+	private String jobId;
 	private String dengjiren;
 	private String startTime;
 	private String endTime;
 	private String jobmiaoshu;
 	private String yaoqiu;
+	private int state;
 	
-	public int getDept_id() {
-		return dept_id;
-	}
-	public void setDept_id(int dept_id	) {
-		this.dept_id = dept_id;
-	}
+	
 	public String getZhaopinType() {
 		return zhaopinType;
 	}
@@ -30,11 +26,18 @@ public class ZhaopinBean {
 	public void setZhaopinNum(int zhaopinNum) {
 		this.zhaopinNum = zhaopinNum;
 	}
-	public String getJob_id() {
-		return job_id;
+	
+	public int getDeptId() {
+		return deptId;
 	}
-	public void setJob_id(String job_id) {
-		this.job_id = job_id;
+	public void setDeptId(int deptId) {
+		this.deptId = deptId;
+	}
+	public String getJobId() {
+		return jobId;
+	}
+	public void setJobId(String jobId) {
+		this.jobId = jobId;
 	}
 	public String getDengjiren() {
 		return dengjiren;
@@ -72,12 +75,21 @@ public class ZhaopinBean {
 	public void setZhaopinId(int zhaopinId) {
 		this.zhaopinId = zhaopinId;
 	}
+	
+	public int getState() {
+		return state;
+	}
+	public void setState(int state) {
+		this.state = state;
+	}
 	@Override
 	public String toString() {
-		return "ZhaopinBean [zhaopinId=" + zhaopinId + ", dept_id=" + dept_id + ", zhaopinType=" + zhaopinType
-				+ ", zhaopinNum=" + zhaopinNum + ", job_id=" + job_id + ", dengjiren=" + dengjiren + ", startTime="
-				+ startTime + ", endTime=" + endTime + ", jobmiaoshu=" + jobmiaoshu + ", yaoqiu=" + yaoqiu + "]";
+		return "ZhaopinBean [zhaopinId=" + zhaopinId + ", deptId=" + deptId + ", zhaopinType=" + zhaopinType
+				+ ", zhaopinNum=" + zhaopinNum + ", jobId=" + jobId + ", dengjiren=" + dengjiren + ", startTime="
+				+ startTime + ", endTime=" + endTime + ", jobmiaoshu=" + jobmiaoshu + ", yaoqiu=" + yaoqiu + ", state="
+				+ state + "]";
 	}
+	
 	
 		
 	

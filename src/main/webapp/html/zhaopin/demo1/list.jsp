@@ -1,3 +1,5 @@
+<%@ page language="java" import="java.util.*" pageEncoding="Utf-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
   <head>
@@ -5,7 +7,7 @@
 
         <title>会员列表</title>
 
-        <link href="../../css/mine.css" type="text/css" rel="stylesheet" />
+        <link href="../html/css/mine.css" type="text/css" rel="stylesheet" />
     </head>
     <body>
         <style>
@@ -15,16 +17,16 @@
             <span>
                 <span style="float: left;">当前位置是：招聘管理-》职位发布管理</span>
                  <span style="float: right; margin-right: 8px; font-weight: bold;">
-                    <a style="text-decoration: none;" href="add.html">【添加】</a>
+                    <a style="text-decoration: none;" href="../html/zhaopin/demo1/add.jsp">【添加】</a>
                 </span>
             </span>
         </div>
         <div></div>
         <div class="div_search">
             <span>
-                <form action="#" method="get">
+                <form action="../../../selectByProps.do" method="post">
 				 职位名称: 
-					<input type="text"  />
+					<input type="text" name="" />
                     职位分类: 
 					<select name="s_product_mark" style="width: 100px;">
 
@@ -59,7 +61,19 @@
 						<td width="40px;">截止日期</td>						
                         <td align="center" width="70px;">操作</td>
                     </tr>
-
+					<c:forEach items="${zhaopinList}" var="list" >
+						<tr id="product1">
+						<td>BDQN-BM03</td>
+                        <td><a href="../zhaopin/selectByPrimaryKey.do?zhaopinId=${list.zhaopinId}&method=view">技术培训师</a></td>
+						<td>技术</td>
+                        <td>产品设计中心</td> 
+						<td>${list.zhaopinNum }</td> 						
+                        <td>${list.startTime}</td>
+						<td>${list.endTime }</td>
+                        <td><a href="../zhaopin/selectByPrimaryKey.do?zhaopinId=${list.zhaopinId}&method=change">变更</a> &nbsp;&nbsp;
+                        <a href="../zhaopin/updateByPrimaryKeySelective.do?zhaopinId=${list.zhaopinId}&method=del">删除</a> </td> 
+						</tr>
+					</c:forEach>
                     <tr id="product1">
                         <td>BDQN-BM03</td>
                         <td><a href="view.html">技术培训师</a></td>
@@ -72,13 +86,13 @@
                     </tr> 
 					 <tr id="product1">
                         <td>BDQN-BM03</td>
-                        <td><a href="view.html">技术培训师</a></td>
+                        <td><a href="../html/zhaopin/demo1/view.jsp">技术培训师</a></td>
 						<td>技术</td>
                         <td>产品设计中心</td> 
 						<td>5</td> 						
                         <td>2013-10-18</td>
 						<td>2013-10-23</td>
-                        <td><a href="add.html">变更</a> &nbsp;&nbsp;<a href="#">删除</a> </td>                        
+                        <td><a href="add.jsp">变更</a> &nbsp;&nbsp;<a href="#">删除</a> </td>                        
                     </tr> 
 					
                     <tr>

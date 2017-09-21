@@ -1,9 +1,11 @@
+<%@ page language="java" import="java.util.*" pageEncoding="Utf-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core"  prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
     <head>
-        <title>薪酬标准管理</title>
+        <title>职位发布管理</title>
         <meta http-equiv="content-type" content="text/html;charset=utf-8">
-        <link href="../../css/mine.css" type="text/css" rel="stylesheet">
+        <link href="../html/css/mine.css" type="text/css" rel="stylesheet">
     </head>
 
     <body>
@@ -12,14 +14,14 @@
             <span>
                 <span style="float:left">当前位置是：招聘管理》职位发布管理-》查看职位信息</span>
                 <span style="float:right;margin-right: 8px;font-weight: bold">
-                    <a style="text-decoration: none" href="list.html">【返回】</a>
+                    <a style="text-decoration: none" href="#" onclick="javascript:history.back(-1);">【返回】</a>
                 </span>
             </span>
         </div>
         <div></div>
 
         <div style="font-size: 13px;margin: 10px 5px">
-            <form action="./admin.php?c=goods&a=add" method="post" enctype="multipart/form-data">
+            <form action="" method="post" >
             <table border="1" width="100%" class="table_a">
                 <tr>
                     <td width="120px;">部门：</td>
@@ -39,13 +41,13 @@
                 <tr>
                     <td>招聘人数：</td>
                      <td>
-					<input type="text" value="5">	
+					<input type="text" readonly value="${zhaopinBean.zhaopinNum }"/>	
 					</td>
                 </tr>
                 <tr>
                     <td>职位名称：</td>
                      <td>
-						<input type="text" value="技术培训师">
+						<input type="text" readonly value="技术培训师">
 					</td>
                 </tr>
                 <tr>
@@ -67,21 +69,21 @@
 				<tr>
                     <td>登记人：</td>
                      <td>
-						个个
+						${zhaopinBean.dengjiren }
 					</td>               
                 </tr>
 
 				<tr>
                     <td>登记时间：</td>
                      <td>
-						2014-11-21
+						${zhaopinBean.startTime }
 					</td>                
                 </tr>
 
 				<tr>
                     <td>截止日期：</td>
                     <td>
-                        2014-12-21
+                        ${zhaopinBean.endTime }
                     </td>                
                 </tr>
 
@@ -89,8 +91,7 @@
                     <td>职位描述：</td>
                     <td>
                        <textarea cols="70" rows="12">
-					   1、负责指导java产品技术方向，研发java教育产品。
-					   2、为java产品提供专家级的技术支持。
+					  	${zhaopinBean.jobmiaoshu }
 					   </textarea>
                     </td>                
                 </tr>
@@ -99,23 +100,13 @@
                     <td>招聘要求：</td>
                     <td>
                        <textarea cols="70" rows="12">
-					  技能要求：
-						1、至少5年以上大型B/S架构软件开发经验。
-						2、精通SSH，有2年以上的使用经验持。
-						3、至少具有一种主流数据库系统的缝隙使用经验，精通sql，熟悉基本的性能优化方法。
-						4、。。。
-						5.。。。
-						素质要求：
-						1、     热爱IT职业教育行业，具有良好的基本技术素质。
-						2、     有较强的学习能力，沟通，表达能力强，有良好工作习惯。
-						3、     。。。
-						4、     。。。
+						${zhaopinBean.yaoqiu }
 					   </textarea>
                     </td>                
                 </tr>
 				 <tr>
                     <td colspan="2" align="center"> 
-						<input type="button" value=" 返回 ">
+						<input type="button" value=" 返回 " onclick="javascript:history.back(-1);">
                     </td>
                 </tr> 
             </table>
