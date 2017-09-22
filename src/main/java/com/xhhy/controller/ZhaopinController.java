@@ -35,6 +35,7 @@ public class ZhaopinController {
 	//-----------------删除招聘信息-----------------------------------------
 	@RequestMapping("updateByPrimaryKeySelective")
 	public String updateByPrimaryKeySelective(ZhaopinBean zhaopinBean,String method ){
+
 		//System.out.println(zhaopinBean.getZhaopinId());
 		if(method!=null&&method.equals("del")){
 			zhaopinBean.setState(State.DEL);
@@ -64,6 +65,42 @@ public class ZhaopinController {
 			return "/html/zhaopin/demo2/up.jsp";
 		}else{
 			return "/html/zhaopin/demo2/view.jsp";
+
+		//System.out.println(method);
+		if(method!=null&&method.equals("del")){
+			zhaopinBean.setState(State.DEL);
+			zhaopinService.updateByPrimaryKeySelective(zhaopinBean);
+			return "selectAll.do";
+		}else{
+			zhaopinBean.setState(State.UNDEL);
+			//System.out.println(zhaopinBean);
+			zhaopinService.updateByPrimaryKeySelective(zhaopinBean);
+			return "selectAll.do";
+		}
+	
+	}
+	
+	//-------------------添加招聘信息-------------------------------------------
+	@RequestMapping("insertSelective")
+	public String insertSelective(ZhaopinBean zhaopinBean){
+		//System.out.println(zhaopinBean);
+		zhaopinBean.setState(State.UNDEL);
+		zhaopinService.insertSelective(zhaopinBean);
+		return "selectAll.do";
+	}
+	
+	//-----------------查询单个招聘信息------------------------------
+	@RequestMapping("selectByPrimaryKey")
+	public String selectByPrimaryKey(Model model,int zhaopinId,String method){
+		//System.out.println(zhaopinId);
+		ZhaopinBean zhaopinBean = zhaopinService.selectByPrimaryKey(zhaopinId);
+		//System.out.println(zhaopinBean);
+		model.addAttribute("zhaopinBean",zhaopinBean);
+		if(method.equals("change")){
+			return "/html/zhaopin/demo1/up.jsp";
+		}else{
+			return "/html/zhaopin/demo1/view.jsp";
+
 		}
 		
 	}

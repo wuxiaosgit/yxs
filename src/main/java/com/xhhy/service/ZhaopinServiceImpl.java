@@ -2,7 +2,6 @@ package com.xhhy.service;
 
 import java.util.List;
 
-<<<<<<< HEAD
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -11,7 +10,7 @@ import com.xhhy.dao.ZhaopinDao;
 import com.xhhy.domain.ZhaopinBean;
 @Transactional
 @Service
-public class ZhaopinService {
+public class ZhaopinServiceImpl implements ZhaopinService {
 	@Autowired
 	private ZhaopinDao zhaopinDao;
 
@@ -36,13 +35,4 @@ public class ZhaopinService {
 	}
 	
 	
-=======
-import com.xhhy.domain.ZhaopinBean;
-
-public interface ZhaopinService {
-	public List<ZhaopinBean> selectAll();
-	public void updateByPrimaryKeySelective(ZhaopinBean zhaopinBean);
-	public void insertSelective(ZhaopinBean zhaopinBean);
-	public ZhaopinBean selectByPrimaryKey(int zhaopinId);
-
 }

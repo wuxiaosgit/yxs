@@ -4,7 +4,11 @@
     <head>
         <title>简历管理</title>
         <meta http-equiv="content-type" content="text/html;charset=utf-8">
+
         <link href="../../css/mine.css" type="text/css" rel="stylesheet">
+
+        <link href="../html/css/mine.css" type="text/css" rel="stylesheet">
+
     </head>
 
     <body>

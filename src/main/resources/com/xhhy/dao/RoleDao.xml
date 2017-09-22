@@ -29,4 +29,10 @@
 		</where>
 	</select>
 
+	<select id="getRoleById" parameterType="int" resultMap="role">
+		select * from role_tb
+		where role_id=#{roleId}
+	</select>
+
+
 </mapper>

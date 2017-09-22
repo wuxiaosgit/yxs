@@ -2,15 +2,15 @@ package com.xhhy.service;
 
 import java.util.List;
 
-<<<<<<< HEAD
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.xhhy.dao.JianliDao;
 import com.xhhy.domain.JianliBean;
-
+@Transactional
 @Service
-public class JianliService {
+public class JianliServiceImpl implements JianliService{
 	@Autowired
 	private JianliDao jianliDao;
 	public List<JianliBean> selectAll() {
@@ -29,14 +29,5 @@ public class JianliService {
 		// TODO Auto-generated method stub
 		jianliDao.insertSelective(jianliBean);
 	}
-
-=======
-import com.xhhy.domain.JianliBean;
-
-public interface JianliService {
-	public List<JianliBean> selectAll();
-	public void updateByPrimaryKeySelective(JianliBean jianliBean);
-	public JianliBean selectByPrimaryKey(int jianliId);
-	public void insertSelective(JianliBean jianliBean);
 
 }

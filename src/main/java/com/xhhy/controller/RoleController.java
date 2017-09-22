@@ -28,6 +28,7 @@ public class RoleController {
 		roleBean.setDeptId(deptId);
 		return roleService.listRole( roleBean);
 	}
+
 	@RequestMapping("selectRole.do")
 	public ModelAndView listdept(RoleBean roleBean){
 		ModelAndView mav=new ModelAndView("../html/resource/demo3/list.jsp");

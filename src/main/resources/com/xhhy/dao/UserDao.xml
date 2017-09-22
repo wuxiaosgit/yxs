@@ -14,6 +14,9 @@
 		<result property="userLogin" column="user_login" />
 		<result property="roleId" column="role_id" />
 		<result property="userPassword" column="user_password" />
+
+		<result property="userName" column="user_name" />
+
 		<result property="userState" column="user_state" />
 		<result property="userGender" column="user_gender" />
 		<result property="userEmail" column="user_email" />
@@ -23,6 +26,9 @@
 		<result property="userTelephone" column="user_telephone" />
 		<result property="userRemark" column="user_remark" />
 		<result property="userPicture" column="user_picture" />
+
+		<association property="roleBean" javaType="RoleBean" select="com.xhhy.dao.RoleDao.getRoleById" column="role_id"></association>
+
 	</resultMap>
 	<insert id="insertUser" parameterType="UserBean">
 		

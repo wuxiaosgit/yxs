@@ -4,7 +4,11 @@
     <head>
         <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 
+<<<<<<< HEAD
         <title>薪酬标准管理</title>
+=======
+        <title>面试管理</title>
+>>>>>>> branch 'master' of git@github.com:wuxiaosgit/yxs.git
 
         <link href="../../css/mine.css" type="text/css" rel="stylesheet" />
     </head>

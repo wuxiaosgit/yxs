@@ -30,6 +30,7 @@ public class UserController {
 	private DeptService deptService;
 	@Autowired
 	private MenuService menuService;
+
 	
 	@RequestMapping("selectUser.do")
 	public ModelAndView selectUser(UserBean userBean){
@@ -38,6 +39,18 @@ public class UserController {
 			userBean.setDeptId(null);
 		}
 		userBean.setRoleId(4);
+
+	
+	@RequestMapping("selectUser.do")
+	public ModelAndView selectUser(UserBean userBean){
+		ModelAndView mav=new ModelAndView("../html/resource/demo2/list.jsp");
+		if (userBean.getDeptId()!=null&&userBean.getDeptId()==-1) {
+			userBean.setDeptId(null);
+		}
+		if (userBean.getRoleId()!=null&&userBean.getRoleId()==-1) {
+			userBean.setRoleId(null);
+		}
+
 		List<UserBean> userBeans=userService.listUser(userBean);
 		for (UserBean userBean2 : userBeans) {
 			System.out.println(userBean2);
@@ -47,6 +60,7 @@ public class UserController {
 		mav.addObject("userName",userBean.getUserName());
 		return mav;
 	}
+
 
 	@RequestMapping("login.do")
 	public ModelAndView login(UserBean userBean){
@@ -68,6 +82,29 @@ public class UserController {
 				}
 				System.out.println();
 			}*/
+
+
+	@RequestMapping("login.do")
+	public ModelAndView login(UserBean userBean){
+		ModelAndView mav=new ModelAndView("../html/index.jsp");
+		UserBean user=userService.login(userBean);
+	
+	
+		if (user==null) {
+			mav.setViewName("../html/login.jsp");
+		}else{
+			mav.addObject("user",user);
+			System.out.println(user);
+			List<MenuBean> menus=menuService.getMenu(user.getRoleId());
+			for (MenuBean menuBean : menus) {
+				System.out.println();
+				System.out.println(menuBean);
+				for (MenuBean m : menuBean.getMenuList()) {
+					System.out.println(m);
+				}
+				System.out.println();
+			}
+
 			mav.addObject("menus",menus);
 			
 		}

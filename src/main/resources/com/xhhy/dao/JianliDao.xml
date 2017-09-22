@@ -226,7 +226,8 @@
       <if test="yijian != null" >
         #{yijian,jdbcType=LONGVARCHAR},
       </if>
-      <if test="yijian != null" >
+      <if test="state != null" >
+
         #{state,jdbcType=INTEGER},
       </if>
     </trim>

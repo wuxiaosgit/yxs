@@ -29,7 +29,7 @@
     	function selectrole(obj){
     		
     		$.post("../role/ajaxRole.do",{deptId:obj},function(result){
-    			alert(result);
+					alert(result);
     			/* var $json=$.parseJSON(result);
     			 var docselect = document.getElementById("docid"); 
     			docselect.innerHTML="";
@@ -99,13 +99,90 @@
 						<td width="100px;">所属部门</td>                                        
                         <td align="center" width="100px;">操作</td>
                     </tr>
-				<c:forEach items="${userBeans }" var="item">
+                    <%-- <c:forEach items="${userBeans }" var="item"> --%>
                     <tr id="product1">
                         <td>${item.userId }</td>
                         <td><input type="checkbox" /></td>
 						<td>${item.userLogin }</td>
                         <td><a href="view.html">${item.userName }</a></td> 
 						<td>人力资源负责人</td> 	
+
+    		<!-- 	 var role = document.getElementById("roleId"); 
+    			 role.innerHTML="";
+    			 role.add(new Option("--请选择--",-1),null);
+    			
+    			for ( var sss in result) {
+					
+    			 role.add(new Option(result[sss].roleName,result[sss].roleId),null);
+				}
+    			
+    			
+    		
+    		});
+    		
+    	}
+    </script> -->
+    
+    <body>
+        <style>
+            .tr_color{background-color: #9F88FF}
+        </style>
+        <div class="div_head">
+            <span>
+                <span style="float: left;">当前位置是：系统管理-》用户管理</span>
+                <span style="float: right; margin-right: 8px; font-weight: bold;">
+                    <a style="text-decoration: none;" href="add.html">【添加】</a>
+					<a style="text-decoration: none;" href="#">【删除】</a>
+                </span>
+            </span>
+        </div>
+        
+        <div></div>
+        <div class="div_search">
+           
+                <form action="../user/selectUser.do" method="post">
+                  	   姓名：
+					<input type="text"  name="userName" value="${userName }" />
+					 所属部门: 
+					<select name="deptId" onchange="selectrole(this.value);">
+				
+					<option value="-1">--请选择--</option>
+					<c:forEach items="${deptBeans }" var="item">
+					<option value="${item.deptId }">${item.deptName }</option>
+					
+					</c:forEach>
+				
+					</select>	
+					 角色: 
+					<select name="roleId" id="roleId">
+						<option value="-1">--请选择--</option>
+				
+					</select>
+                    <input value="查询" type="submit" />
+					
+                </form>
+           
+        </div>
+        <div style="font-size: 13px; margin: 10px 5px;">
+            <table class="table_a" border="1" width="100%">
+                <tbody>
+						<tr style="font-weight: bold;">						
+                        <td width="40px;">序号</td>
+                        <td width="30px;"><input type="checkbox" /></td>						
+						<td width="80px;">账号</td>
+                        <td width="80px;">姓名</td>
+                        <td >角色</td>
+						<td width="100px;">所属部门</td>                                        
+                        <td align="center" width="100px;">操作</td>
+                    </tr>
+				<c:forEach items="${userBeans }" var="item">
+                    <tr id="product1">
+                        <td>${item.userId }</td>
+                        <td><input type="checkbox" /></td>
+						<td>${item.userLogin }</td>
+                        <td><a href="view.html">${item.userName }</a></td> 
+						<td>${item.userName }</td> 	
+
 						<td>人力资源</td> 						                        
                         <td>
 							<a href="add.html">修改</a>						   

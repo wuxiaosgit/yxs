@@ -74,6 +74,7 @@
       <if test="yaoqiu != null" >
         yaoqiu,
       </if>
+
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="zhaopinId != null" >
@@ -105,6 +106,45 @@
       </if>
       <if test="yaoqiu != null" >
         #{yaoqiu,jdbcType=LONGVARCHAR},
+	</if>
+      <if test="state != null" >
+        state,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="zhaopinId != null" >
+        #{zhaopinId,jdbcType=INTEGER},
+      </if>
+      <if test="deptId != null" >
+        #{deptId,jdbcType=INTEGER},
+      </if>
+      <if test="zhaopinType != null" >
+        #{zhaopinType,jdbcType=VARCHAR},
+      </if>
+      <if test="zhaopinNum != null" >
+        #{zhaopinNum,jdbcType=INTEGER},
+      </if>
+      <if test="jobId != null" >
+        #{jobId,jdbcType=VARCHAR},
+      </if>
+      <if test="dengjiren != null" >
+        #{dengjiren,jdbcType=VARCHAR},
+      </if>
+      <if test="startTime != null" >
+        #{startTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="endTime != null" >
+        #{endTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="jobmiaoshu != null" >
+        #{jobmiaoshu,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="yaoqiu != null" >
+        #{yaoqiu,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="state != null" >
+        #{state,jdbcType=INTEGER},
+
       </if>
     </trim>
   </insert>
